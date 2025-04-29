@@ -86,7 +86,7 @@ export default function RegisterPage() {
         <div className="flex justify-end space-x-4">
           <button
             type="button"
-            onClick={() => router.push("/guestbook")}
+            onClick={() => router.push("/components/GuestBook")}
             className="px-6 py-2 border border-gray-700 rounded-lg text-white hover:bg-white/10 transition-colors"
           >
             취소
