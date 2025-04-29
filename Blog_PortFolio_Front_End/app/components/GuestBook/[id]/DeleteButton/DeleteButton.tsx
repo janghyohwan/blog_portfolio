@@ -10,7 +10,7 @@ function DeleteButton({ id }: { id: string }) {
       try {
         await deleteGuestbook(id);
         router.push("/components/GuestBook");
-      } catch (error) {
+      } catch {
         alert("삭제에 실패했습니다.");
       }
     }
@@ -24,4 +24,5 @@ function DeleteButton({ id }: { id: string }) {
     </button>
   );
 }
+
 export default DeleteButton;

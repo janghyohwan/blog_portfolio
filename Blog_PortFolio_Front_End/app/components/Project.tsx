@@ -3,6 +3,7 @@
 import { defaultCards } from "@/data/ProjectData";
 import { ProjectProps } from "@/types/ProjectType";
 import React, { useState, useMemo } from "react";
+import Image from "next/image";
 
 const ProjectSection: React.FC<ProjectProps> = ({
   cards = defaultCards,
@@ -93,16 +94,20 @@ const ProjectSection: React.FC<ProjectProps> = ({
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <img
+                  <Image
                     src={card.imageSrc}
                     alt={card.title}
+                    width={600}
+                    height={300}
                     className="w-full h-[300px] object-cover"
                   />
                 </a>
               ) : (
-                <img
+                <Image
                   src={card.imageSrc}
                   alt={card.title}
+                  width={600}
+                  height={300}
                   className="w-full h-[300px] object-cover"
                 />
               )}
