@@ -42,7 +42,7 @@ export default async function GuestBookPage() {
               <Link
                 key={guestbook.id}
                 href={`/components/GuestBook/${guestbook.id}`}
-                className="block p-6 bg-white/10 backdrop-blur-lg rounded-lg hover:bg-white/20 transition-colors"
+                className="block p-6 bg-white/10 backdrop-blur-lg rounded-lg hover:bg-white/20 transition-colors border border-white/20"
               >
                 <div className="flex justify-between items-start">
                   <h3 className="font-semibold text-white">
