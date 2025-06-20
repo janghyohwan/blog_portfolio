@@ -4,14 +4,13 @@ import DeleteButton from "./DeleteButton/DeleteButton";
 import Link from "next/link";
 
 interface PageProps {
-  params: {
-    id: string;
-  };
+  params: Promise<{ id: string }>;
 }
-export default async function Page({ params }: PageProps) {
-  const { id } = params;
-  const guestbook = await getGuestbook(id);
 
+export default async function Page({ params }: PageProps) {
+  const resolvedParams = await params;
+  const { id } = resolvedParams;
+  const guestbook = await getGuestbook(id);
   return (
     <div className="min-h-screen bg-black">
       <div className="container mx-auto px-4 py-12">
