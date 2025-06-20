@@ -1,3 +1,4 @@
+export const revalidate = 60;
 import { getGuestbooks } from "@/utils/api";
 import Link from "next/link";
 
