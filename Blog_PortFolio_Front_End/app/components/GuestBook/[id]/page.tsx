@@ -1,12 +1,22 @@
+"use client";
+
+import React, { useEffect, useState } from "react";
 import { getGuestbook } from "@/utils/api";
 import DeleteButton from "./DeleteButton/DeleteButton";
 import Link from "next/link";
+import { Guestbook } from "@/types/Guestbook";
 
-type Params = { id: string };
+export default function Page({ params }: { params: { id: string } }) {
+  const { id } = params;
+  const [guestbook, setGuestbook] = useState<Guestbook | null>(null);
 
-export default async function Page({ params }: { params: Promise<Params> }) {
-  const { id } = await params;
-  const guestbook = await getGuestbook(id);
+  useEffect(() => {
+    getGuestbook(id)
+      .then((data) => setGuestbook(data.data))
+      .catch(console.error);
+  }, [id]);
+
+  if (!guestbook) return <div>Loading...</div>;
 
   return (
     <div className="min-h-screen bg-black">
@@ -25,17 +35,17 @@ export default async function Page({ params }: { params: Promise<Params> }) {
             <div className="flex justify-between items-start mb-6">
               <div>
                 <h1 className="text-3xl font-bold text-white mb-2">
-                  {guestbook.data.author}님의 방명록
+                  {guestbook.author}님의 방명록
                 </h1>
                 <p className="text-gray-400">
-                  {new Date(guestbook.data.createdAt).toLocaleDateString()}
+                  {new Date(guestbook.createdAt).toLocaleDateString()}
                 </p>
               </div>
             </div>
 
             <div className="bg-white/5 rounded-lg p-6 mb-6 border border-white/10">
               <p className="text-gray-300 text-lg leading-relaxed whitespace-pre-wrap">
-                {guestbook.data.content}
+                {guestbook.content}
               </p>
             </div>
 
