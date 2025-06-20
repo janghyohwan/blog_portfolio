@@ -3,14 +3,13 @@ import { getGuestbook } from "@/utils/api";
 import DeleteButton from "./DeleteButton/DeleteButton";
 import Link from "next/link";
 
-export default async function Page({
-  params,
-}: {
-  params: { id: string } | Promise<{ id: string }>;
-}) {
-  const { id } = await params; // Promise가 와도 처리
-
-  // API 호출
+type Props = {
+  params: {
+    id: string;
+  };
+};
+export default async function Page({ params }: Props) {
+  const { id } = params;
   const guestbook = await getGuestbook(id);
 
   return (
