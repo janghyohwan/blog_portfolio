@@ -4,7 +4,6 @@ import Link from "next/link";
 
 type Props = {
   params: { id: string };
-  searchParams: { [key: string]: string | string[] | undefined };
 };
 
 export default async function Page({ params }: Props) {
