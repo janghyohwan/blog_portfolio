@@ -1,6 +1,6 @@
 "use client";
 
-import GuestBookList from "./GuestBookList/GuestBookList";
+import GuestBookList from "../GuestBook/GuestBookList/GuestBookList";
 
 const GuestBookSection = () => {
   return (

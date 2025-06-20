@@ -9,7 +9,7 @@ function DeleteButton({ id }: { id: string }) {
     if (confirm("정말로 이 방명록을 삭제하시겠습니까?")) {
       try {
         await deleteGuestbook(id);
-        router.push("/components/GuestBook");
+        router.push("/GuestBook");
       } catch {
         alert("삭제에 실패했습니다.");
       }

@@ -15,7 +15,7 @@ export default async function GuestBookPage() {
             뒤로가기
           </Link>
           <Link
-            href="/components/GuestBook/register"
+            href="/GuestBook/register"
             className="px-6 py-2 bg-gradient-to-r from-purple-500 to-indigo-600 text-white rounded-lg hover:opacity-90 transition-opacity"
           >
             방명록 작성
@@ -41,7 +41,7 @@ export default async function GuestBookPage() {
             {guestbooks.map((guestbook) => (
               <Link
                 key={guestbook.id}
-                href={`/components/GuestBook/${guestbook.id}`}
+                href={`/GuestBook/${guestbook.id}`}
                 className="block p-6 bg-white/10 backdrop-blur-lg rounded-lg hover:bg-white/20 transition-colors border border-white/20"
               >
                 <div className="flex justify-between items-start">

@@ -33,7 +33,7 @@ export default function GuestBookList() {
       <div className="flex justify-between items-center mb-8">
         <h2 className="text-2xl font-bold text-white">방명록</h2>
         <Link
-          href="/components/GuestBook"
+          href="/GuestBook"
           className="px-6 py-2 bg-gradient-to-r from-purple-500 to-indigo-600 text-white rounded-lg hover:opacity-90 transition-opacity"
         >
           더보기
@@ -48,7 +48,7 @@ export default function GuestBookList() {
           {guestbooks.map((guestbook) => (
             <Link
               key={guestbook.id}
-              href={`/components/GuestBook/${guestbook.id}`}
+              href={`/GuestBook/${guestbook.id}`}
               className="block p-6 bg-white/10 backdrop-blur-lg rounded-lg hover:bg-white/20 transition-colors"
             >
               <div className="flex justify-between items-start">

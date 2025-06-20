@@ -26,7 +26,7 @@ export default function GuestBookPage() {
       <div className="container mx-auto px-4 py-8">
         <div className="flex justify-between items-center mb-8">
           <Link href="/">뒤로가기</Link>
-          <Link href="/components/GuestBook/register">방명록 작성</Link>
+          <Link href="/GuestBook/register">방명록 작성</Link>
         </div>
         <h1 className="text-5xl font-bold text-white mb-6">GUESTBOOK</h1>
 

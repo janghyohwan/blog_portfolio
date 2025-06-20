@@ -16,7 +16,7 @@ export default function RegisterPage() {
     e.preventDefault();
     try {
       await createGuestbook(formData);
-      router.push("/components/GuestBook");
+      router.push("/GuestBook");
     } catch (error) {
       console.error("Error creating guestbook:", error);
       alert("방명록 작성 중 오류가 발생했습니다.");
@@ -38,7 +38,7 @@ export default function RegisterPage() {
       <div className="flex justify-between items-center mb-8">
         <h1 className="text-3xl font-bold text-white">방명록 작성</h1>
         <Link
-          href="/components/GuestBook"
+          href="/GuestBook"
           className="px-6 py-2 bg-gradient-to-r from-purple-500 to-indigo-600 text-white rounded-lg hover:opacity-90 transition-opacity"
         >
           목록으로
@@ -86,7 +86,7 @@ export default function RegisterPage() {
         <div className="flex justify-end space-x-4">
           <button
             type="button"
-            onClick={() => router.push("/components/GuestBook")}
+            onClick={() => router.push("/GuestBook")}
             className="px-6 py-2 border border-gray-700 rounded-lg text-white hover:bg-white/10 transition-colors"
           >
             취소
