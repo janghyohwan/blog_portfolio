@@ -2,11 +2,7 @@ import { getGuestbook } from "@/utils/api";
 import DeleteButton from "./DeleteButton/DeleteButton";
 import Link from "next/link";
 
-type Props = {
-  params: { id: string };
-};
-
-export default async function Page({ params }: Props) {
+export default async function Page({ params }: { params: { id: string } }) {
   const { id } = params;
   const guestbook = await getGuestbook(id);
 
