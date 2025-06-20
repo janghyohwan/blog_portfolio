@@ -2,8 +2,14 @@ import { getGuestbook } from "@/utils/api";
 import DeleteButton from "./DeleteButton/DeleteButton";
 import Link from "next/link";
 
-export default async function Page({ params }: { params: { id: string } }) {
-  const { id } = params;
+type Params = { id: string };
+
+export default async function Page({
+  params,
+}: {
+  params: Promise<Params> | Params;
+}) {
+  const { id } = await params;
   const guestbook = await getGuestbook(id);
 
   return (
