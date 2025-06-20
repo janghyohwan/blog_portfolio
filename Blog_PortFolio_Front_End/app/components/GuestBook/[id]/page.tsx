@@ -4,11 +4,7 @@ import Link from "next/link";
 
 type Params = { id: string };
 
-export default async function Page({
-  params,
-}: {
-  params: Promise<Params> | Params;
-}) {
+export default async function Page({ params }: { params: Promise<Params> }) {
   const { id } = await params;
   const guestbook = await getGuestbook(id);
 
